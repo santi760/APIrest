@@ -1,6 +1,6 @@
 import express from 'express'
 
-import comunityRouter from './'
+import comunityRouter from './routes/comunities'
 
 const app = express()
 app.use(express.json()) 
@@ -12,7 +12,7 @@ app.get('/ping', (_req, res) => {
     res.send('pong')
 } )
 
-app.use('./api/comunities',comunityRouter)
+app.use('/api/comunities', comunityRouter)
 
 app.listen(PORT, () => {
     console.log(`Server running on port ${PORT}`)
